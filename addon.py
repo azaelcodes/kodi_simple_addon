@@ -1,6 +1,6 @@
 import xbmc, xbmcgui, xbmcaddon
 
-addon = xbmcaddon.Addon('plugin.video.abctest')
+addon = xbmcaddon.Addon('plugin.video.artefrancetest')
 title = addon.getAddonInfo('name')
 icon = addon.getAddonInfo('icon')
 link = 'http://topiptv.net:5890/live/atoz/atoz/3320.ts'
