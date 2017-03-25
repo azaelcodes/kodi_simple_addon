@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.artefrancetest" name="ARTE France" version="1.0" provider-name="acodes">
+<addon id="plugin.video.azaelcodesfavs" name="Azael Codes - Favorites" version="1.0" provider-name="acodes">
 	<requires>
 		<import addon="xbmc.python" version="2.14.0"/>
 	</requires>
@@ -8,8 +8,8 @@
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<platform>all</platform>
-		<summary lang="en">ARTE France Live</summary>
-		<description lang="en">A live stream of ARTE Frannce</description>
+		<summary lang="en">Get list of favorites</summary>
+		<description lang="en">Get a list of favorites stored in a file</description>
 		<license>GNU General Public License, v2</license>
 		<language></language>
 		<forum></forum>
@@ -23,6 +23,7 @@
 			<screenshot>resources/screenshot-02.jpg</screenshot>
 			<screenshot>resources/screenshot-03.jpg</screenshot>
 		</assets>
+		<news>March 25 - Query a list of favorites from a file</news>
 		<news>Feb 26 2017 - Started development</news>
 	</extension>
 </addon>
