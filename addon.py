@@ -3,7 +3,7 @@ import xbmc, xbmcgui, xbmcaddon, common
 addon = xbmcaddon.Addon('plugin.video.azaelcodesfavs')
 title = addon.getAddonInfo('name')
 icon = addon.getAddonInfo('icon')
-user_dataDir = xbmc.translatePath(Addon.getAddonInfo("profile")).decode("utf-8")
+user_dataDir = xbmc.translatePath(addon.getAddonInfo("profile")).decode("utf-8")
 
 FAVORITES = os.path.join(user_dataDir, 'favorites.txt')
 if not (os.path.isfile(FAVORITES)):
