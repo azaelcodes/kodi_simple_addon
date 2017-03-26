@@ -14,7 +14,7 @@ favorites = xbmc.translatePath('special://userdata/favourites.xml')
 tree = ET.parse(favorites)
 root = tree.getroot()
 
-for favorite in root.findall('favorite'):
-    list_item = xbmcgui.ListItem(label=favorite.get('name'))
+for favourite in root.findall('favourite'):
+    list_item = xbmcgui.ListItem(label=favourite.get('name'))
     xbmcplugin.addDirectoryItem(_handle, _url, list_item, False)
 xbmcplugin.endOfDirectory(_handle)
