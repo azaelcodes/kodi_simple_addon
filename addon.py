@@ -23,7 +23,7 @@ def write_list(fileName, list, indent=True):
 
 FAVORITES = os.path.join(user_dataDir, 'favorites.txt')
 if not (os.path.isfile(FAVORITES)):
-    write_list(FAV, 'Hello-World')
+    write_list(FAVORITES, 'Hello-World')
 xbmcgui.Dialog().ok(title, 'Hello', 'World', 'Azael')
 
 
