@@ -13,5 +13,5 @@ user_dataDir = xbmc.translatePath(addon.getAddonInfo("profile")).decode("utf-8")
 
 # Data Directory
 list_item = xbmcgui.ListItem(label=user_dataDir)
-xbmcplugin.addDirectoryItem(_handle, url, list_item, false)
+xbmcplugin.addDirectoryItem(_handle, _url, list_item, False)
 xbmcplugin.endOfDirectory(_handle)
