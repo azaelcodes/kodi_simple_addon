@@ -14,7 +14,7 @@ favorites = xbmc.translatePath('special://userdata/testsettings.xml')
 tree = ET.parse(favorites)
 root = tree.getroot()
 
-for country in root.finall('country'):
+for country in root.findall('country'):
     list_item = xbmcgui.ListItem(label=country.get('name'))
-xbmcplugin.addDirectoryItem(_handle, _url, list_item, False)
+    xbmcplugin.addDirectoryItem(_handle, _url, list_item, False)
 xbmcplugin.endOfDirectory(_handle)
