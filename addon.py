@@ -1,4 +1,5 @@
 import sys
+import os
 import xbmc, xbmcgui, xbmcaddon, xbmcplugin
 
 # Get the plugin url in plugin:// notation.
