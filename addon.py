@@ -10,11 +10,11 @@ _handle = int(sys.argv[1])
 addon = xbmcaddon.Addon('plugin.video.azaelcodesfavs')
 title = addon.getAddonInfo('name')
 icon = addon.getAddonInfo('icon')
-favorites = xbmc.translatePath('special://userdata/testsettings.xml')
+favorites = xbmc.translatePath('special://userdata/favourites.xml')
 tree = ET.parse(favorites)
 root = tree.getroot()
 
-for country in root.findall('country'):
-    list_item = xbmcgui.ListItem(label=country.get('name'))
+for favorite in root.findall('favorite'):
+    list_item = xbmcgui.ListItem(label=favorite.get('name'))
     xbmcplugin.addDirectoryItem(_handle, _url, list_item, False)
 xbmcplugin.endOfDirectory(_handle)
