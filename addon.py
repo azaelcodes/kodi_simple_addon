@@ -1,5 +1,5 @@
 import sys
-import os
+import xml.etree.ElementTree as ET
 import xbmc, xbmcgui, xbmcaddon, xbmcplugin
 
 # Get the plugin url in plugin:// notation.
@@ -10,10 +10,11 @@ _handle = int(sys.argv[1])
 addon = xbmcaddon.Addon('plugin.video.azaelcodesfavs')
 title = addon.getAddonInfo('name')
 icon = addon.getAddonInfo('icon')
-user_dataDir = xbmc.translatePath(addon.getAddonInfo("profile")).decode("utf-8")
-user_addonData = os.path.join(xbmc.translatePath('special://userdata'))
+favorites = xbmc.translatePath('special://userdata/testsettings.xml')
+tree = ET.parse(favorites)
+root = tree.getroot()
 
-# Data Directory
-list_item = xbmcgui.ListItem(label=user_addonData)
+for country in root.finall('country'):
+    list_item = xbmcgui.ListItem(label=country.get('name'))
 xbmcplugin.addDirectoryItem(_handle, _url, list_item, False)
 xbmcplugin.endOfDirectory(_handle)
