@@ -1,4 +1,9 @@
-import xbmc, xbmcgui, xbmcaddon, common
+import xbmc, xbmcgui, xbmcaddon
+
+addonPath = xbmc.translatePath(Addon.getAddonInfo("path")).decode("utf-8")
+libDir = os.path.join(addonPath, 'resources', 'lib')
+sys.path.insert(0, libDir)
+import common
 
 addon = xbmcaddon.Addon('plugin.video.azaelcodesfavs')
 title = addon.getAddonInfo('name')
