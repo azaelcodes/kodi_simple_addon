@@ -1,30 +1,14 @@
-import xbmc, xbmcgui, xbmcaddon
-import os, io, json
+import sys
+import xbmc, xbmcgui, xbmcaddon, xbmcplugin
 
 addon = xbmcaddon.Addon('plugin.video.azaelcodesfavs')
 title = addon.getAddonInfo('name')
 icon = addon.getAddonInfo('icon')
 user_dataDir = xbmc.translatePath(addon.getAddonInfo("profile")).decode("utf-8")
 
-def write_list(fileName, list, indent=True):
-    try:
-        with io.open(fileName, 'w', encoding='utf-8') as handle:
-            if indent:
-                handle.write(unicode(json.dumps(list, indent=2, ensure_ascii=False)))
-            else:
-                handle.write(unicode(json.dumps(list, ensure_ascii=False)))
-        success = True
-    except Exception as ex:
-        xbmc.log("{0}".format(ex), 3)
-        success = False
+# List example
+addonHandle = int(sys.argv[1])
+li = xbmcgui.ListItem(user_dataDir, iconImage='none.png')
+xbmcplugin.addDirectory(handle=addonHandle, 'url:url//', listitem=li)
 
-    return success
-
-
-FAVORITES = os.path.join(user_dataDir, 'favorites.txt')
-if not (os.path.isfile(FAVORITES)):
-    write_list(FAVORITES, 'Hello-World')
-xbmcgui.Dialog().ok(title, 'Hello', 'World', 'Azael')
-
-
-
+xbmcplugin.endOfDirectory(addonHandle)
