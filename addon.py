@@ -7,4 +7,4 @@ icon = addon.getAddonInfo('icon')
 user_dataDir = xbmc.translatePath(addon.getAddonInfo("profile")).decode("utf-8")
 
 # Data Directory
-xbmcgui.Dialog().ok(addon, 'Title 1', user_dataDir, 'Last one')
+list_item = xbmcgui.ListItem(label=user_dataDir)
